@@ -1,6 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+
+// import 'package:app1/src/utils/network_image.dart';
 
 class CardPage extends StatelessWidget {
   const CardPage({Key key}) : super(key: key);
@@ -13,14 +13,24 @@ class CardPage extends StatelessWidget {
       ),
       body: ListView(
         padding: EdgeInsets.all(10.0),
-        children: <Widget>[_cardTipo1(), SizedBox(height: 30.0), _cardTipo2()],
+        children: <Widget>[
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+        ],
       ),
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.grey[50],
     );
   }
 
   Widget _cardTipo1() {
     return Card(
+      elevation: 10.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
       child: Column(
         children: <Widget>[
           ListTile(
@@ -49,16 +59,18 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTipo2() {
-    final _client = new HttpClient();
-    _client.badCertificateCallback =
-        (X509Certificate cert, String host, int port) => true;
-    return Card(
+    // final _image = new NetworkImageSSL(
+    //     'https://www.switchbacktravel.com/sites/default/files/images/articles/Yellowstone%20landscape%20photo.jpg');
+    final card = Container(
       child: Column(
         children: <Widget>[
           FadeInImage(
             placeholder: AssetImage('assets/loading.gif'),
             image: NetworkImage(
                 'https://www.switchbacktravel.com/sites/default/files/images/articles/Yellowstone%20landscape%20photo.jpg'),
+            fadeInDuration: Duration(milliseconds: 500),
+            height: 250.0,
+            fit: BoxFit.cover,
           ),
           Container(
             child: Text('Algo aquí'),
@@ -66,6 +78,23 @@ class CardPage extends StatelessWidget {
           )
         ],
       ),
+    );
+
+    return Container(
+      child: ClipRRect(
+        child: card,
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          color: Colors.white,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+                color: Colors.black26,
+                blurRadius: 10.0,
+                spreadRadius: 2.0,
+                offset: Offset(2.0, 10.0))
+          ]),
     );
   }
 }

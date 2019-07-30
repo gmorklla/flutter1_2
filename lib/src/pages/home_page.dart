@@ -18,13 +18,14 @@ class HomePage extends StatelessWidget {
       future: menuProvider.cargarData(),
       initialData: [],
       builder: (context, AsyncSnapshot<List<dynamic>> snapshot) => ListView(
-            children: _crearItems(snapshot.data, context),
-          ),
+        children: _crearItems(snapshot.data, context),
+      ),
     );
   }
 
   List<Widget> _crearItems(List<dynamic> data, BuildContext context) {
     final List<Widget> opciones = [];
+
     data.forEach((opt) {
       final wTemp = ListTile(
         title: Text(opt['texto']),

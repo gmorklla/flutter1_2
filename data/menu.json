@@ -14,6 +14,16 @@
       "ruta": "card",
       "icon": "folder_open",
       "texto": "Cards"
+    },
+    {
+      "ruta": "animated",
+      "icon": "videogame_asset",
+      "texto": "Animated"
+    },
+    {
+      "ruta": "inputs",
+      "icon": "input",
+      "texto": "Inputs"
     }
   ]
 }
