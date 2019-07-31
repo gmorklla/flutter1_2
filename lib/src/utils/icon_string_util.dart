@@ -5,7 +5,8 @@ final _icons = <String, IconData>{
   'accessibility': Icons.accessibility,
   'folder_open': Icons.folder_open,
   'videogame_asset': Icons.videogame_asset,
-  'input': Icons.input
+  'input': Icons.input,
+  'tune': Icons.tune
 };
 
 final _colors = <String, Color>{

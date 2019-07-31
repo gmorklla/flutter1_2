@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:app1/src/pages/alert_page.dart';
 import 'package:app1/src/routes/routes.dart';
@@ -24,6 +25,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
+      supportedLocales: [
+        const Locale('en'),
+        const Locale('es'),
+      ],
       title: 'Componentes App',
       initialRoute: '/',
       routes: getApplicationRoutes(),
