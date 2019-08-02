@@ -39,6 +39,11 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (RouteSettings settings) {
         return MaterialPageRoute(builder: (context) => AlertPage());
       },
+      theme: new ThemeData(
+        pageTransitionsTheme: PageTransitionsTheme(builders: {
+          TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+        }),
+      ),
     );
   }
 }

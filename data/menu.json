@@ -29,6 +29,11 @@
       "ruta": "slider",
       "icon": "tune",
       "texto": "Slider"
+    },
+    {
+      "ruta": "list",
+      "icon": "view_list",
+      "texto": "List"
     }
   ]
 }

@@ -6,7 +6,8 @@ final _icons = <String, IconData>{
   'folder_open': Icons.folder_open,
   'videogame_asset': Icons.videogame_asset,
   'input': Icons.input,
-  'tune': Icons.tune
+  'tune': Icons.tune,
+  'view_list': Icons.view_list
 };
 
 final _colors = <String, Color>{
